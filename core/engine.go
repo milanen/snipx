@@ -28,9 +28,9 @@ func RunEngine(inputs []string, cfg config.Config) {
     	fmt.Printf("[base] err: %s\n", err)
 	}
 
-	fmt.Printf("[base] %s -> status=%d length=%d\n", inputs[0], base.Status, base.Length)
+	//fmt.Printf("[base] %s -> status=%d length=%d\n", inputs[0], base.Status, base.Length)
 
-	//loop
+	// loop
 	for _, el := range inputs {
 		target := strings.ReplaceAll(cfg.Target.Template, "§", el)
 
@@ -40,7 +40,7 @@ func RunEngine(inputs []string, cfg config.Config) {
 			return			
 		}
 		// run detector
-		detectors.BasicDetector(resp, el, base)
+		detectors.BasicDetector(resp, el, base, cfg.Detector)
 	}
 
 
