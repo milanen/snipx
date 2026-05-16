@@ -1,5 +1,10 @@
 module sniping
 
-go 1.24.4
+go 1.25.0
 
-require gopkg.in/yaml.v3 v3.0.1 // indirect
+require (
+	github.com/BurntSushi/toml v1.4.1-0.20240526193622-a339e1f7089c // indirect
+	golang.org/x/tools v0.40.1-0.20260108161641-ca281cf95054 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+	honnef.co/go/tools v0.7.0 // indirect
+)

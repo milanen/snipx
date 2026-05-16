@@ -9,8 +9,8 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-func InitConfig() config.Config {
-    data, err := os.ReadFile("config/models/config.yaml")
+func InitConfig(configPath string) config.Config {
+    data, err := os.ReadFile(configPath)
     if err != nil {
         panic(err)
     }
@@ -24,8 +24,8 @@ func InitConfig() config.Config {
     return raw
 }
 
-func LoadInputs() []string {
-    file, err := os.Open("config/inputs.txt")
+func LoadInputs(cfg config.Config) []string {
+    file, err := os.Open(cfg.Input.Path)
     if err != nil {
         log.Fatal(err)
     }
